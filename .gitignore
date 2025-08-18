@@ -1,0 +1,10 @@
+# Build-Artefakte
+/build/
+/public/
+
+# Tool-Cache (lokal)
+.doctoolchain/
+/.gradle/
+
+# macOS
+.DS_Store
