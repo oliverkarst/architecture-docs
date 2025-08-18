@@ -1,0 +1,44 @@
+name: Build & Deploy docToolchain site
+
+# Globale Rechte: wir pushen später nach gh-pages
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Java ist für docToolchain/Gradle nötig
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Falls dtcw im Repo fehlt, sauber herunterladen
+      - name: Ensure dtcw exists
+        run: |
+          if [ ! -f dtcw ]; then
+            curl -fsSL -o dtcw https://doctoolchain.org/dtcw
+          fi
+          chmod +x dtcw
+
+      # Microsite bauen (arc42 ist Default-Template in src/docs/arc42)
+      - name: Build microsite
+        run: ./dtcw generateSite
+
+      # Ergebnis ausliefern nach gh-pages
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/microsite/output
