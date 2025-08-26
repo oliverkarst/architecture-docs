@@ -31,6 +31,21 @@ endif::arc42help[]
 
 === Aufgabenstellung
 
+==== Beispielsystem: KI-gestützte Architekturdokumentation
+
+Dieses Projekt demonstriert die effektive Nutzung von KI-Tools (insbesondere Claude Code) für die Erstellung und Pflege von Architekturdokumentation.
+
+**Kernaufgaben:**
+* Strukturierte Erfassung und Dokumentation von Softwarearchitekturen
+* Automatisierte Generierung von Diagrammen und Beschreibungen
+* Konsistente Pflege der Dokumentation über den Lebenszyklus
+* Wissenstransfer und Schulung in "Vibe Coding" Techniken
+
+**Zielgruppe:**
+* Softwarearchitekten und -entwickler
+* Technical Writers und Dokumentationsteams  
+* Teams, die KI-Tools in ihre Entwicklungsprozesse integrieren möchten
+
 ifdef::arc42help[]
 [role="arc42help"]
 ****
@@ -56,6 +71,33 @@ Siehe https://docs.arc42.org/section-1/[Anforderungen und Ziele] in der online-D
 endif::arc42help[]
 
 === Qualitätsziele
+
+Die folgenden Qualitätsziele sind für unser KI-gestütztes Architekturdokumentationssystem prioritär:
+
+[cols="1,3,1" options="header"]
+|===
+|Qualitätsziel |Szenario/Motivation |Priorität
+
+|**Konsistenz & Korrektheit**
+|Alle generierten Inhalte müssen fachlich korrekt und konsistent formatiert sein. KI-Unterstützung darf nicht zu Qualitätsverlust führen.
+|Sehr hoch
+
+|**Wartbarkeit & Nachvollziehbarkeit** 
+|Jede Änderung muss nachvollziehbar dokumentiert sein. Templates und Prompts müssen wartbar und erweiterbar sein.
+|Hoch
+
+|**Effizienz & Automatisierung**
+|Dokumentationserstellung soll um mindestens 50% beschleunigt werden bei gleichbleibender Qualität.
+|Hoch
+
+|**Benutzerfreundlichkeit**
+|Neue Teammitglieder können binnen 2 Wochen effektiv mit dem System arbeiten. Dokumentation ist selbsterklärend.
+|Mittel
+
+|**Erweiterbarkeit & Flexibilität**
+|System kann für verschiedene Architekturtypen und Projektgrößen angepasst werden. Neue KI-Tools lassen sich integrieren.
+|Mittel
+|===
 
 ifdef::arc42help[]
 [role="arc42help"]
@@ -103,6 +145,24 @@ endif::arc42help[]
 [cols="1,1,2" options="header"]
 |===
 |Rolle |Kontakt |Erwartungshaltung
-| _<Rolle-1>_ | _<Kontakt-1>_ | _<Erwartung-1>_
-| _<Rolle-2>_ | _<Kontakt-2>_ | _<Erwartung-2>_ 
+
+|Softwarearchitekt 
+|@oliver (Projektleiter) 
+|Strukturierte Dokumentation der Systemarchitektur, Werkzeuge für effiziente Dokumentationserstellung
+
+|Entwicklungsteam 
+|Interne Entwickler 
+|Verständliche, aktuelle Dokumentation als Arbeitsgrundlage, einfache Pflegeprozesse
+
+|Technical Writer 
+|Dokumentationsteam 
+|Standardisierte Vorlagen, automatisierte Generierung, Qualitätssicherung
+
+|KI-Tool Anwender 
+|Lernende/Einsteiger 
+|Praktische Beispiele, Best Practices, wiederverwendbare Patterns für Vibe Coding
+
+|Management/Stakeholder 
+|Entscheider 
+|Übersichtliche Darstellung von Architekturentscheidungen, Risiken und Compliance
 |===

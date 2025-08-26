@@ -1,0 +1,151 @@
+= Entwicklungsrichtlinien für KI-gestützte Architekturdokumentation
+:toc:
+:toclevels: 3
+
+== Überblick
+
+Diese Richtlinien definieren Best Practices für die Zusammenarbeit mit KI-Tools bei der Erstellung und Pflege von Architekturdokumentation mit arc42 und docToolchain.
+
+== 1. Grundprinzipien
+
+=== 1.1 Menschliche Kontrolle
+* KI unterstützt, ersetzt aber nicht die fachliche Entscheidung
+* Alle KI-generierten Inhalte müssen von Menschen reviewt werden
+* Architekturentscheidungen bleiben in menschlicher Verantwortung
+
+=== 1.2 Iterative Entwicklung
+* Beginne mit groben Strukturen, verfeinere schrittweise
+* Nutze KI für konsistente Formatierung und Strukturierung
+* Dokumentiere den Entwicklungsprozess in ADRs (Architecture Decision Records)
+
+=== 1.3 Transparenz
+* Markiere KI-generierte Inhalte deutlich
+* Dokumentiere verwendete Prompts und Ansätze
+* Versioniere wichtige Änderungen und deren Rationale
+
+== 2. Arbeitsweise mit arc42
+
+=== 2.1 Kapitel-spezifische Ansätze
+
+==== Kapitel 1-3: Kontext und Ziele
+* Beginne mit Stakeholder-Interviews oder Business-Anforderungen
+* Nutze KI für strukturierte Aufbereitung von Notizen
+* Validiere Inhalte mit Fachexperten
+
+==== Kapitel 4-5: Lösung und Bausteine
+* Verwende KI für alternative Lösungsansätze
+* Generiere PlantUML-Diagramme aus Beschreibungen
+* Reviewe technische Machbarkeit kritisch
+
+==== Kapitel 6-8: Laufzeit und Querschnitt
+* Nutze KI für Sequenz- und Aktivitätsdiagramme
+* Automatisiere wiederkehrende Dokumentationspattern
+* Stelle Konsistenz zwischen Kapiteln sicher
+
+==== Kapitel 9-12: Entscheidungen und Qualität
+* Dokumentiere KI-unterstützte Entscheidungsfindung
+* Generiere Testfälle aus Qualitätsanforderungen
+* Erstelle Risikobewertungen systematisch
+
+=== 2.2 Qualitätssicherung
+
+==== Automatisierte Checks
+[source,bash]
+----
+# Build-Test
+./dtcw generateSite
+
+# Link-Validierung  
+./dtcw htmlSanityCheck
+
+# Vollständige Dokumentation
+./dtcw generateHTML generatePDF
+----
+
+==== Manuelle Reviews
+* Fachliche Korrektheit
+* Konsistenz der Terminologie
+* Vollständigkeit der Querverweise
+* Verständlichkeit für Zielgruppe
+
+== 3. KI-Prompt Engineering
+
+=== 3.1 Struktur von Prompts
+* Kontext: Projektspezifische Informationen
+* Aufgabe: Klare, spezifische Anweisungen
+* Format: Gewünschte Ausgabestruktur
+* Validierung: Kriterien für Qualitätsbewertung
+
+=== 3.2 Beispiel-Prompts
+
+==== Lösungsstrategie entwickeln
+----
+Kontext: Web-basierte E-Commerce-Plattform mit 100k+ Nutzern
+Aufgabe: Entwickle eine Lösungsstrategie für Kapitel 4 (arc42)
+Format: Strukturiert nach arc42-Template mit deutschen Überschriften
+Berücksichtige: Skalierbarkeit, Security, Maintainability
+----
+
+==== Bausteindiagramm erstellen
+----
+Kontext: Microservices-Architektur mit 8 Services
+Aufgabe: Erstelle PlantUML-Code für Bausteinsicht Ebene 1
+Format: PlantUML-Syntax mit deutschen Beschriftungen
+Inkludiere: Service-Abhängigkeiten, Datenflüsse, externe Systeme
+----
+
+=== 3.3 Prompt-Bibliothek
+Siehe: `docs/prompts/` für wiederverwendbare Prompt-Templates
+
+== 4. Versionierung und Dokumentation
+
+=== 4.1 Git-Workflow
+* Feature-Branches für größere Architekturdokumentations-Updates
+* Aussagekräftige Commit-Messages mit Bezug zu arc42-Kapiteln
+* Tags für wichtige Architektur-Meilensteine
+
+=== 4.2 Änderungsprotokoll
+* ADRs für KI-unterstützte Architekturentscheidungen
+* Dokumentation verwendeter KI-Tools und -Modelle
+* Bewertung der Qualität KI-generierter Inhalte
+
+== 5. Automatisierung
+
+=== 5.1 GitHub Actions
+* Automatische Builds bei Push/PR
+* Deployment zu GitHub Pages
+* Link-Checks und Format-Validierung
+
+=== 5.2 Diagramm-Generierung
+* PlantUML-Integration in Build-Pipeline
+* Automatische Diagramm-Updates aus Code
+* Versionierung von Diagramm-Quellen
+
+== 6. Kollaboration
+
+=== 6.1 Team-Guidelines
+* Regelmäßige Reviews der KI-unterstützten Inhalte
+* Knowledge Sharing über effektive Prompts
+* Kontinuierliche Verbesserung des Prozesses
+
+=== 6.2 Stakeholder-Integration
+* Nachvollziehbare Dokumentation für Nicht-Techniker
+* Visualisierung komplexer Sachverhalte
+* Regelmäßige Validierung mit Fachbereichen
+
+== 7. Metriken und Verbesserung
+
+=== 7.1 Qualitätsmetriken
+* Vollständigkeit der arc42-Kapitel
+* Konsistenz der Diagramme und Texte
+* Aktualität der Dokumentation
+
+=== 7.2 Effizienzmetriken
+* Zeitersparnis durch KI-Unterstützung
+* Reduktion von Dokumentationsfehlern
+* Verbesserung der Verständlichkeit
+
+=== 7.3 Kontinuierliche Verbesserung
+* Regelmäßige Retrospektiven
+* Anpassung der Prompts und Prozesse
+* Integration neuer KI-Capabilities
