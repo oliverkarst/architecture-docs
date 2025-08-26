@@ -382,11 +382,72 @@
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_aufgabenstellung">Aufgabenstellung</h3>
-
+<div class="sect3">
+<h4 id="_beispielsystem_ki_gestützte_architekturdokumentation">Beispielsystem: KI-gestützte Architekturdokumentation</h4>
+<div class="paragraph">
+<p>Dieses Projekt demonstriert die effektive Nutzung von KI-Tools (insbesondere Claude Code) für die Erstellung und Pflege von Architekturdokumentation.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kernaufgaben:</strong>
+* Strukturierte Erfassung und Dokumentation von Softwarearchitekturen
+* Automatisierte Generierung von Diagrammen und Beschreibungen
+* Konsistente Pflege der Dokumentation über den Lebenszyklus
+* Wissenstransfer und Schulung in "Vibe Coding" Techniken</p>
+</div>
+<div class="paragraph">
+<p><strong>Zielgruppe:</strong>
+* Softwarearchitekten und -entwickler
+* Technical Writers und Dokumentationsteams
+* Teams, die KI-Tools in ihre Entwicklungsprozesse integrieren möchten</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_qualitätsziele">Qualitätsziele</h3>
-
+<div class="paragraph">
+<p>Die folgenden Qualitätsziele sind für unser KI-gestütztes Architekturdokumentationssystem prioritär:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Qualitätsziel</th>
+<th class="tableblock halign-left valign-top">Szenario/Motivation</th>
+<th class="tableblock halign-left valign-top">Priorität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Konsistenz &amp; Korrektheit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle generierten Inhalte müssen fachlich korrekt und konsistent formatiert sein. KI-Unterstützung darf nicht zu Qualitätsverlust führen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sehr hoch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wartbarkeit &amp; Nachvollziehbarkeit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jede Änderung muss nachvollziehbar dokumentiert sein. Templates und Prompts müssen wartbar und erweiterbar sein.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hoch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Effizienz &amp; Automatisierung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dokumentationserstellung soll um mindestens 50% beschleunigt werden bei gleichbleibender Qualität.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hoch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzerfreundlichkeit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neue Teammitglieder können binnen 2 Wochen effektiv mit dem System arbeiten. Dokumentation ist selbsterklärend.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mittel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Erweiterbarkeit &amp; Flexibilität</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System kann für verschiedene Architekturtypen und Projektgrößen angepasst werden. Neue KI-Tools lassen sich integrieren.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mittel</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_stakeholder">Stakeholder</h3>
@@ -405,14 +466,29 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Rolle-1&gt;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Kontakt-1&gt;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Erwartung-1&gt;</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Softwarearchitekt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@oliver (Projektleiter)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strukturierte Dokumentation der Systemarchitektur, Werkzeuge für effiziente Dokumentationserstellung</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Rolle-2&gt;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Kontakt-2&gt;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>&lt;Erwartung-2&gt;</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entwicklungsteam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interne Entwickler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verständliche, aktuelle Dokumentation als Arbeitsgrundlage, einfache Pflegeprozesse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technical Writer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dokumentationsteam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardisierte Vorlagen, automatisierte Generierung, Qualitätssicherung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KI-Tool Anwender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lernende/Einsteiger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Praktische Beispiele, Best Practices, wiederverwendbare Patterns für Vibe Coding</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Management/Stakeholder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entscheider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übersichtliche Darstellung von Architekturentscheidungen, Risiken und Compliance</p></td>
 </tr>
 </tbody>
 </table>
